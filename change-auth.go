@@ -27,11 +27,10 @@ func main() {
 		newAuthor := args[0]
 		newEmail := args[1]
 
-		gitLogCommand := "git log --reverse --format='%h' --max-count="
+		gitLogCommand := "git log --reverse --format='%h'"
 
-		if allCommits {
-			gitLogCommand += "HEAD"
-		} else {
+		if !allCommits {
+			gitLogCommand += " --max-count="
 			gitLogCommand += fmt.Sprintf("%d", numCommits)
 		}
 
