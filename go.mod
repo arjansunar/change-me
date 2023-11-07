@@ -1,4 +1,4 @@
-module change-auth
+module github.com/arjansunar/change-me
 
 go 1.21.0
 
